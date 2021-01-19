@@ -8,7 +8,7 @@ class Dog(commands.Cog):
         self.bot = bot
 
     @commands.command()
-    async def find(self, ctx):
+    async def find( self, ctx):
         users = ctx.guild.voice_channels
 
         userlist = []
