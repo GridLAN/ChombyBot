@@ -115,7 +115,7 @@ class Dog(commands.Cog):
                 await ctx.send("Chomby can't find you (You need to be in a voice channel)")
 
     @commands.command()
-    async def shoo(self, ctx):
+    async def crate(self, ctx):
         """Shoo Chomby away"""
         await ctx.voice_client.disconnect()
 
