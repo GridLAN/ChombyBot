@@ -26,7 +26,7 @@ class Dog(commands.Cog):
             if ctx.voice_client is not None:
                 return await ctx.voice_client.move_to(voice_channel)
             await voice_channel.connect()
-            source = discord.PCMVolumeTransformer(discord.FFmpegPCMAudio('chomby_audio/bark2.wav'))
+            source = discord.PCMVolumeTransformer(discord.FFmpegPCMAudio('chomby_audio/sic.mp3'))
             ctx.voice_client.play(source)
 
             while ctx.voice_client.is_playing():
