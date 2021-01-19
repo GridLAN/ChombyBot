@@ -116,7 +116,7 @@ class Dog(commands.Cog):
 
     @commands.command()
     async def crate(self, ctx):
-        """Shoo Chomby away"""
+        """Put Chomby in their crate"""
         await ctx.voice_client.disconnect()
 
 
