@@ -33,7 +33,7 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v2
       with:
-        repository: 'https://github.com/GridLAN/k8s'
+        repository: 'GridLAN/k8s'
 
     - name: Setup Kustomize
       uses: imranismail/setup-kustomize@v1
