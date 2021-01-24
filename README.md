@@ -1,5 +1,4 @@
 ![Python package](https://github.com/GridLAN/ChombyBot/workflows/Python%20package/badge.svg)
-<<< Not true. Pylint is currently disabled. 1/18.
 # ChombyBot
 A virtual pet for your Discord server..
 
