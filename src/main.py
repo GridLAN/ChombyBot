@@ -1,14 +1,23 @@
 import os
+import logging
 import asyncio
 import discord
 from discord.ext import commands
+
+logger = logging.getLogger('discord')
+logger.setLevel(logging.INFO)
+handler = logging.FileHandler(
+    filename='discord.log', encoding='utf-8', mode='w')
+handler.setFormatter(logging.Formatter(
+    '%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
+logger.addHandler(handler)
 
 class Dog(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
 
     @commands.command()
-    async def find(self, ctx):
+    async def find( self, ctx):
         users = ctx.guild.voice_channels
 
         userlist = []
@@ -26,7 +35,7 @@ class Dog(commands.Cog):
             if ctx.voice_client is not None:
                 return await ctx.voice_client.move_to(voice_channel)
             await voice_channel.connect()
-            source = discord.PCMVolumeTransformer(discord.FFmpegPCMAudio('chomby_audio/bark2.wav'))
+            source = discord.PCMVolumeTransformer(discord.FFmpegPCMAudio('chomby_audio/sic.mp3'))
             ctx.voice_client.play(source)
 
             while ctx.voice_client.is_playing():
@@ -56,6 +65,17 @@ class Dog(commands.Cog):
         while ctx.voice_client.is_playing():
             await asyncio.sleep(1)
 
+        ctx.voice_client.stop()
+        await ctx.voice_client.disconnect()
+
+    @commands.command(help="Give Chomby a snack")
+    async def snore(self, ctx, *, query='chomby_audio/snore.mp3'):
+        source = discord.PCMVolumeTransformer(discord.FFmpegPCMAudio(query))
+        ctx.voice_client.play(source)
+
+        while ctx.voice_client.is_playing():
+            await asyncio.sleep(1)
+        
         ctx.voice_client.stop()
         await ctx.voice_client.disconnect()
 
@@ -92,6 +112,7 @@ class Dog(commands.Cog):
 
     @whistle.before_invoke
     @chomby.before_invoke
+    @snore.before_invoke
     @feed.before_invoke
     @dingdong.before_invoke
     @baddog.before_invoke
@@ -103,8 +124,8 @@ class Dog(commands.Cog):
                 await ctx.send("Chomby can't find you (You need to be in a voice channel)")
 
     @commands.command()
-    async def shoo(self, ctx):
-        """Shoo Chomby away"""
+    async def crate(self, ctx):
+        """Put Chomby in their crate"""
         await ctx.voice_client.disconnect()
 
 

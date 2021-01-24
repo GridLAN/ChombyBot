@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: chomby
-        image: kuthero/chombybot:slim
+        image: kuthero/chombybot:latest
         env:
         - name: TOKEN
           valueFrom:

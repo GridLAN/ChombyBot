@@ -4,3 +4,4 @@ ffmpeg.exe
 Pipfile
 Pipfile.lock
 k8s/secret.yml
+.DS_Store/
