@@ -21,11 +21,11 @@ jobs:
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
-        image: kuthero/chombybot
         registry: docker.io
-        tags: ${{ github.sha }}
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
+        repository: ${{ secrets.DOCKER_USERNAME }}/chombybot
+        tags: ${{ github.sha }}
 
   deploy:
     name: Deploy
