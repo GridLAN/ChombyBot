@@ -143,8 +143,16 @@ bot = commands.Bot(command_prefix=commands.when_mentioned_or('..'), description=
 
 @bot.event
 async def on_ready():
+    logger.info('{0} is ready'.format(bot.user))
     print('{0} is ready'.format(bot.user))
 
+@bot.event
+async def on_disconnect():
+    logger.info('Bot has disconnected')
+
+@bot.event
+async def on_error(event, *args, **kwargs):
+    logger.info('ERROR: {}'.format(event))
 
 bot.add_cog(Dog(bot))
 
