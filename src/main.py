@@ -5,7 +5,7 @@ import discord
 from discord.ext import commands
 
 logger = logging.getLogger('discord')
-logger.setLevel(logging.INFO)
+logger.setLevel(logging.DEBUG)
 handler = logging.FileHandler(
     filename='discord.log', encoding='utf-8', mode='w')
 handler.setFormatter(logging.Formatter(
@@ -143,9 +143,17 @@ bot = commands.Bot(command_prefix=commands.when_mentioned_or('..'), description=
 
 @bot.event
 async def on_ready():
+    logger.info('{0} is ready'.format(bot.user))
     print('{0} is ready'.format(bot.user))
 
+@bot.event
+async def on_disconnect():
+    logger.info('Bot has disconnected')
+
+@bot.event
+async def on_error(event, *args, **kwargs):
+    logger.info('ERROR: {}'.format(event))
 
 bot.add_cog(Dog(bot))
 
-bot.run(os.getenv('TOKEN'))
+bot.run('ODAwNDk2NjQ0NTg3MTI2ODU0.YAS-mA.A6I6g-U8zdgYDOxG1HxqgOiRcsM')
