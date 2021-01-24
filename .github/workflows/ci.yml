@@ -12,10 +12,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Python Pylin GitHub Action
-      uses: fylein/python-pylint-github-action@v1
-      with:
-        args: pip install -r src/requirements.txt && pylint --rcfile=pylintrc ./src/main.py
+    # - name: Python Pylin GitHub Action
+    #   uses: fylein/python-pylint-github-action@v1
+    #   with:
+    #     args: pip install -r src/requirements.txt && pylint --rcfile=pylintrc ./src/main.py
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v4
       with:
