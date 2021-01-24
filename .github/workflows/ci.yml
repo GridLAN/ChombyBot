@@ -48,6 +48,7 @@ jobs:
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       #TODO: Use https://github.com/rlespinasse/github-slug-action for abbreviated GITHUB_SHA and BRANCH_REF in the kustomize edit line below..
+      # currently using https://stackoverflow.com/questions/58886293/getting-current-branch-and-commit-hash-in-github-action to achieve results now.
       run: |
        cd applications/chomby/kustomize/base
        kustomize edit set image chombybot=$DOCKER_USERNAME/chombybot:main-${GITHUB_SHA::7}
