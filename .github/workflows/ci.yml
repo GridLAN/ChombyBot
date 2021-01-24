@@ -47,6 +47,7 @@ jobs:
     - name: Update Kubernetes resources
       env:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      #TODO: Use https://github.com/rlespinasse/github-slug-action for abbreviated GITHUB_SHA and BRANCH_REF in the kustomize edit line below..
       run: |
        cd applications/chomby/kustomize/base
        kustomize edit set image chombybot=$DOCKER_USERNAME/chombybot:main-${GITHUB_SHA::7}
@@ -63,4 +64,3 @@ jobs:
       with:
         github_token: ${{ secrets.PAT_FOR_PUSH }}
         repository: 'GridLAN/k8s'
-# comment
