@@ -24,7 +24,7 @@ jobs:
         registry: docker.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        repository: ${{ secrets.DOCKER_USERNAME }}/chombybot
+        image: ${{ secrets.DOCKER_USERNAME }}/chombybot
         tags: ${{ github.sha }}
 
   deploy:
