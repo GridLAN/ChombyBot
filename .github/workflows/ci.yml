@@ -50,7 +50,7 @@ jobs:
         DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
       run: |
        cd applications/chomby/kustomize/base
-       kustomize edit set image chombybot=$DOCKER_USERNAME/chombybot:$GITHUB_SHA
+       kustomize edit set image chombybot=$DOCKER_USERNAME/chombybot:$GITHUB_REF-$GITHUB_SHA
        cat kustomization.yaml
         
     - name: Commit files
