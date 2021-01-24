@@ -53,7 +53,7 @@ class Dog(commands.Cog):
 
         while ctx.voice_client.is_playing():
             await asyncio.sleep(1)
-        
+
         ctx.voice_client.stop()
         await ctx.voice_client.disconnect()
 
@@ -64,7 +64,7 @@ class Dog(commands.Cog):
 
         while ctx.voice_client.is_playing():
             await asyncio.sleep(1)
-        
+
         ctx.voice_client.stop()
         await ctx.voice_client.disconnect()
 
@@ -89,7 +89,7 @@ class Dog(commands.Cog):
 
         ctx.voice_client.stop()
         await ctx.voice_client.disconnect()
-    
+
     @commands.command()
     async def baddog(self, ctx, *, query='chomby_audio/whine.wav'):
         """Sad Chomby"""
