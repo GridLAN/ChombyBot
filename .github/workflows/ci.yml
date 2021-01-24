@@ -3,26 +3,26 @@ name: Python package
 on: [push]
 
 jobs:
-  # build:
-  #   runs-on: ubuntu-latest
-  #   strategy:
-  #     matrix:
-  #       python-version: [3.8]
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: [3.8]
 
-  #   steps:
-  #   - uses: actions/checkout@v2
-  #   # - name: Python Pylin GitHub Action
-  #   #   uses: fylein/python-pylint-github-action@v1
-  #   #   with:
-  #   #     args: pip install -r src/requirements.txt && pylint --rcfile=pylintrc ./src/main.py
-  #   - name: Build and Push Docker Image
-  #     uses: mr-smithers-excellent/docker-build-push@v4
-  #     with:
-  #       image: kuthero/chombybot
-  #       registry: docker.io
-  #       tags: ${{ github.sha }}, latest
-  #       username: ${{ secrets.DOCKER_USERNAME }}
-  #       password: ${{ secrets.DOCKER_PASSWORD }}
+    steps:
+    - uses: actions/checkout@v2
+    # - name: Python Pylin GitHub Action
+    #   uses: fylein/python-pylint-github-action@v1
+    #   with:
+    #     args: pip install -r src/requirements.txt && pylint --rcfile=pylintrc ./src/main.py
+    - name: Build and Push Docker Image
+      uses: mr-smithers-excellent/docker-build-push@v4
+      with:
+        image: kuthero/chombybot
+        registry: docker.io
+        tags: ${{ github.sha }}, latest
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
 
   deploy:
     name: Deploy
@@ -61,4 +61,3 @@ jobs:
       with:
         github_token: ${{ secrets.PAT_FOR_PUSH }}
         repository: 'GridLAN/k8s'
-        # created
