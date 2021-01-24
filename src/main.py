@@ -156,4 +156,4 @@ async def on_error(event, *args, **kwargs):
 
 bot.add_cog(Dog(bot))
 
-bot.run('ODAwNDk2NjQ0NTg3MTI2ODU0.YAS-mA.A6I6g-U8zdgYDOxG1HxqgOiRcsM')
+bot.run(os.getenv('TOKEN'))
