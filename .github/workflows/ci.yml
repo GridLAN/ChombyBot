@@ -55,10 +55,11 @@ jobs:
         git config --local user.email "dangreenlee@github.com"
         git config --local user.name "dangreenlee"
         git commit -am "Bump docker tag"
+        git push
 
-    - name: Push changes
-      uses: ad-m/github-push-action@master
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        repository: 'GridLAN/k8s'
-        # created
+    # - name: Push changes
+    #   uses: ad-m/github-push-action@master
+    #   with:
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     repository: 'GridLAN/k8s'
+    #     # created
