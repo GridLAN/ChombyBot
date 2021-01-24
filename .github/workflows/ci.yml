@@ -33,6 +33,7 @@ jobs:
     - name: Check out code
       uses: actions/checkout@v2
       with:
+        persist-credentials: false
         repository: 'GridLAN/k8s'
 
     - name: Setup Kustomize
@@ -57,6 +58,6 @@ jobs:
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
-        github_token: ${{ secrets.GH_TOKEN }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
         repository: 'GridLAN/k8s'
         # created
