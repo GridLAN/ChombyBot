@@ -1,6 +1,9 @@
 name: Python package
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
   build:
@@ -20,7 +23,7 @@ jobs:
       with:
         image: kuthero/chombybot
         registry: docker.io
-        tags: ${{ github.sha }}, latest
+        tags: ${{ github.sha }}
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
 
