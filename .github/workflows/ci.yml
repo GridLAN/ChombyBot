@@ -46,7 +46,7 @@ jobs:
       run: |
        cd applications/chomby/kustomize/base
        kustomize edit set image chombybot=$DOCKER_USERNAME/chombybot:$GITHUB_SHA
-       cat kustomization.yaml
+       cat kustomization.yml
         
     - name: Commit files
       run: |
