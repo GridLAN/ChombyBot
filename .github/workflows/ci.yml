@@ -55,8 +55,8 @@ jobs:
         
     - name: Commit files
       run: |
-        git config --local user.email "dangreenlee@github.com"
-        git config --local user.name "dangreenlee"
+        git config --local user.email "git-action-deploy@github.com"
+        git config --local user.name "git-action-bot"
         git commit -am "Bump docker tag"
 
     - name: Push changes
