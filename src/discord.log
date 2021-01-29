@@ -1,15 +1,9 @@
-2021-01-24 14:04:11,300:INFO:discord.client: logging in using static token
-2021-01-24 14:04:11,542:INFO:discord.gateway: Shard ID None has sent the IDENTIFY payload.
-2021-01-24 14:04:11,626:INFO:discord.gateway: Shard ID None has connected to Gateway: ["gateway-prd-main-1075",{"micros":41717,"calls":["discord-sessions-prd-2-4",{"micros":38053,"calls":["start_session",{"micros":32394,"calls":["api-prd-main-n4d0",{"micros":29949,"calls":["get_user",{"micros":2534},"add_authorized_ip",{"micros":1515},"get_guilds",{"micros":4434},"coros_wait",{"micros":0}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":1,"calls":[]}]}]}] (Session ID: 343ddf38229395c5dd836ef6d03a8155).
-2021-01-24 14:04:19,822:INFO:discord.voice_client: Connecting to voice...
-2021-01-24 14:04:19,823:INFO:discord.voice_client: Starting voice handshake... (connection attempt 1)
-2021-01-24 14:04:19,885:INFO:discord.voice_client: Voice handshake complete. Endpoint found us-east919.discord.media
-2021-01-24 14:04:20,190:INFO:discord.gateway: selected the voice protocol for use (xsalsa20_poly1305_lite)
-2021-01-24 14:04:20,255:INFO:discord.gateway: received secret key for voice connection
-2021-01-24 14:04:32,586:INFO:discord.voice_client: The voice handshake is being terminated for Channel ID 427251974677987342 (Guild ID 427251974677987338)
-2021-01-24 14:04:32,586:INFO:discord.voice_client: Disconnecting from voice normally, close code 1000.
-2021-01-24 14:06:03,400:INFO:discord.client: Received signal to terminate bot and event loop.
-2021-01-24 14:06:03,400:INFO:discord.client: Cleaning up tasks.
-2021-01-24 14:06:03,400:INFO:discord.client: Cleaning up after 1 tasks.
-2021-01-24 14:06:03,401:INFO:discord.client: All tasks finished cancelling.
-2021-01-24 14:06:03,401:INFO:discord.client: Closing the event loop.
+2021-01-28 23:22:15,260:WARNING:discord.client: PyNaCl is not installed, voice will NOT be supported
+2021-01-28 23:22:15,261:INFO:discord.client: logging in using static token
+2021-01-28 23:22:16,449:INFO:discord.gateway: Shard ID None has sent the IDENTIFY payload.
+2021-01-28 23:22:16,827:INFO:discord.gateway: Shard ID None has connected to Gateway: ["gateway-prd-main-dq11",{"micros":127683,"calls":["discord-sessions-prd-2-94",{"micros":123978,"calls":["start_session",{"micros":67362,"calls":["api-prd-main-3kj7",{"micros":62262,"calls":["get_user",{"micros":5504},"add_authorized_ip",{"micros":3041},"get_guilds",{"micros":9658},"coros_wait",{"micros":1}]}]},"guilds_connect",{"micros":2,"calls":[]},"presence_connect",{"micros":42341,"calls":[]}]}]}] (Session ID: eb40778dd6bffe132e9fc924c05c27a8).
+2021-01-28 23:22:18,845:INFO:discord: Chomby#6162 is ready
+2021-01-28 23:29:31,117:INFO:discord.client: Cleaning up tasks.
+2021-01-28 23:29:31,117:INFO:discord.client: Cleaning up after 1 tasks.
+2021-01-28 23:29:31,118:INFO:discord.client: All tasks finished cancelling.
+2021-01-28 23:29:31,118:INFO:discord.client: Closing the event loop.
