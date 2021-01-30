@@ -3,8 +3,9 @@ import logging
 import asyncio
 import discord
 import youtube_dl
+import ctypes
+import ctypes.util
 from discord.ext import commands
-
 
 logger = logging.getLogger('discord')
 logger.setLevel(logging.INFO)
@@ -13,6 +14,10 @@ handler = logging.FileHandler(
 handler.setFormatter(logging.Formatter(
     '%(asctime)s:%(levelname)s:%(name)s: %(message)s'))
 logger.addHandler(handler)
+
+logger.info('ctypes - Find Opus:')
+a = ctypes.util.find_library('opus')
+logger.info(a)
 
 youtube_dl.utils.bug_reports_message = lambda: ''
 
