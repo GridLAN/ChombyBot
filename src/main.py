@@ -5,6 +5,7 @@ import discord
 import youtube_dl
 from discord.ext import commands
 
+discord.opus.load_opus()
 
 logger = logging.getLogger('discord')
 logger.setLevel(logging.INFO)
