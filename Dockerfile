@@ -2,7 +2,7 @@ FROM python:alpine
 
 WORKDIR /src
 RUN apk add --no-cache --virtual \
-    .pynacl_deps build-base ffmpeg libffi-dev python3-dev opus
+    .pynacl_deps build-base ffmpeg libffi-dev python3-dev opus-dev
 COPY /src /src
 RUN pip install -r requirements.txt
 
